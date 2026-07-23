@@ -1,0 +1,14 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Bank of Ireland (UK) Account & Transaction Information API
+  version: 1.0.0
+extends: openapi/bank-of-ireland-uk-account-info-openapi.yaml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: bank-of-ireland-uk
+    x-apievangelist-standard: OBIE Open Banking (UK CMA9)
+    x-apievangelist-conformance: [oauth2, oidc, fapi, psd2, mutual-tls]
+    x-apievangelist-auth: authentication/bank-of-ireland-uk-authentication.yml
+    x-apievangelist-errors: errors/bank-of-ireland-uk-problem-types.yml
+    x-apievangelist-conventions: conventions/bank-of-ireland-uk-conventions.yml

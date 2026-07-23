@@ -1,0 +1,82 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/bank-of-ireland-uk-account-info-openapi.yaml, openapi/bank-of-ireland-uk-payment-initiation-openapi.yaml, openapi/bank-of-ireland-uk-confirmation-funds-openapi.yaml
+note: >-
+  Entity-relationship graph derived from the OBIE 3.1 Read/Write resource model.
+  All account-scoped resources hang off a consent and an AccountId; payments hang
+  off a payment consent.
+entities:
+- name: AccountAccessConsent
+  key: ConsentId
+  domain: AIS
+  note: Grants an AISP read access to a set of accounts and permissions.
+- name: Account
+  key: AccountId
+  domain: AIS
+- name: Balance
+  domain: AIS
+- name: Transaction
+  domain: AIS
+- name: Beneficiary
+  domain: AIS
+- name: StandingOrder
+  domain: AIS
+- name: DirectDebit
+  domain: AIS
+- name: Statement
+  key: StatementId
+  domain: AIS
+- name: Party
+  domain: AIS
+- name: DomesticPaymentConsent
+  key: ConsentId
+  domain: PIS
+- name: DomesticPayment
+  key: DomesticPaymentId
+  domain: PIS
+- name: FundsConfirmationConsent
+  key: ConsentId
+  domain: CBPII
+- name: FundsConfirmation
+  domain: CBPII
+relationships:
+- from: Account
+  to: AccountAccessConsent
+  type: belongs_to
+  via: ConsentId
+- from: Balance
+  to: Account
+  type: belongs_to
+  via: AccountId
+- from: Transaction
+  to: Account
+  type: belongs_to
+  via: AccountId
+- from: Beneficiary
+  to: Account
+  type: belongs_to
+  via: AccountId
+- from: StandingOrder
+  to: Account
+  type: belongs_to
+  via: AccountId
+- from: DirectDebit
+  to: Account
+  type: belongs_to
+  via: AccountId
+- from: Statement
+  to: Account
+  type: belongs_to
+  via: AccountId
+- from: Party
+  to: Account
+  type: belongs_to
+  via: AccountId
+- from: DomesticPayment
+  to: DomesticPaymentConsent
+  type: belongs_to
+  via: ConsentId
+- from: FundsConfirmation
+  to: FundsConfirmationConsent
+  type: belongs_to
+  via: ConsentId

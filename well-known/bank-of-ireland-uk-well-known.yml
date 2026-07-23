@@ -1,0 +1,45 @@
+generated: '2026-07-23'
+method: searched
+note: >-
+  Probed /.well-known/ across the API host (openapi.bankofireland.com), the
+  FAPI Read/Write host (api.obapi.bankofireland.com), the UK authorization host
+  (auth.obapi.bankofireland.com) and the Developer Hub. Only the FAPI OpenID
+  discovery document at the authorization host is a real, useful artifact and is
+  saved verbatim. The authorization host returns an identical Apple app-site
+  applinks JSON for every other /.well-known/ path (security.txt,
+  oauth-authorization-server, api-catalog, ai-plugin.json) - that is a catch-all
+  default, NOT an RFC 9116 security.txt or RFC 8414 metadata document, so no
+  SecurityTxt artifact is emitted. The API host returned 503 for all
+  /.well-known/ probes; the corporate site www.bankofirelanduk.com has no
+  security.txt (404).
+hosts:
+- host: https://auth.obapi.bankofireland.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: bank-of-ireland-uk-openid-configuration.json
+    note: Real FAPI/OBIE 3.1 OpenID Connect discovery document (issuer, endpoints, scopes_supported, PS256, tls_client_auth, mTLS-bound tokens).
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    note: Catch-all applinks JSON, not RFC 8414 metadata - ignored.
+  - path: /.well-known/security.txt
+    status: 200
+    note: Catch-all applinks JSON, not RFC 9116 - ignored (no real security.txt).
+- host: https://openapi.bankofireland.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 503
+  - path: /.well-known/security.txt
+    status: 503
+  - path: /.well-known/api-catalog
+    status: 503
+- host: https://developer.bankofireland.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 302
+  - path: /.well-known/openid-configuration
+    status: 302
+- host: https://www.bankofirelanduk.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404

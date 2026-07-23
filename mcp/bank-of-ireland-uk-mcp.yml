@@ -1,0 +1,63 @@
+generated: '2026-07-23'
+method: derived
+status: candidate
+source: openapi/*.yaml, openapi/bank-of-ireland-uk-open-data-openapi.json
+note: >-
+  No official hosted MCP server was found for Bank of Ireland (UK). This is a
+  candidate tool list derived from the OpenAPI operations. The Open Data tools
+  are anonymously callable (public OBIE Open Data API); every Read/Write tool
+  requires FAPI OAuth2 + PSD2 SCA + mutual-TLS with OB/eIDAS certificates and TPP
+  onboarding, so a real MCP deployment must carry a certificate-bound token per
+  the agentic-access contracts.
+server:
+  name: bank-of-ireland-uk
+  transport: http
+tools:
+- name: list_atms
+  description: List Bank of Ireland (UK) ATMs (public Open Data).
+  source_operation: openapi/bank-of-ireland-uk-open-data-openapi.json#GET /atms
+  auth: none
+- name: list_branches
+  description: List branches (public Open Data).
+  source_operation: openapi/bank-of-ireland-uk-open-data-openapi.json#GET /branches
+  auth: none
+- name: list_personal_current_accounts
+  description: List personal current account products (public Open Data).
+  source_operation: openapi/bank-of-ireland-uk-open-data-openapi.json#GET /personal-current-accounts
+  auth: none
+- name: list_business_current_accounts
+  description: List business current account products (public Open Data).
+  source_operation: openapi/bank-of-ireland-uk-open-data-openapi.json#GET /business-current-accounts
+  auth: none
+- name: list_unsecured_sme_loans
+  description: List unsecured SME loan products (public Open Data).
+  source_operation: openapi/bank-of-ireland-uk-open-data-openapi.json#GET /unsecured-sme-loans
+  auth: none
+- name: list_commercial_credit_cards
+  description: List commercial credit card products (public Open Data).
+  source_operation: openapi/bank-of-ireland-uk-open-data-openapi.json#GET /commercial-credit-cards
+  auth: none
+- name: get_accounts
+  description: List accounts the PSU has consented to share (AIS).
+  source_operation: openapi/bank-of-ireland-uk-account-info-openapi.yaml#GetAccounts
+  auth: fapi-oauth2
+- name: get_account_transactions
+  description: Read transactions for a consented account (AIS).
+  source_operation: openapi/bank-of-ireland-uk-account-info-openapi.yaml#GetAccountsAccountIdTransactions
+  auth: fapi-oauth2
+- name: create_account_access_consent
+  description: Create an account-access consent (AIS).
+  source_operation: openapi/bank-of-ireland-uk-account-info-openapi.yaml#CreateAccountAccessConsents
+  auth: fapi-oauth2
+- name: create_domestic_payment_consent
+  description: Create a domestic payment consent (PIS).
+  source_operation: openapi/bank-of-ireland-uk-payment-initiation-openapi.yaml#CreateDomesticPaymentConsents
+  auth: fapi-oauth2
+- name: create_domestic_payment
+  description: Initiate a domestic payment against an authorised consent (PIS).
+  source_operation: openapi/bank-of-ireland-uk-payment-initiation-openapi.yaml#CreateDomesticPayments
+  auth: fapi-oauth2
+- name: create_funds_confirmation
+  description: Confirm availability of funds on a consented account (CBPII).
+  source_operation: openapi/bank-of-ireland-uk-confirmation-funds-openapi.yaml#CreateFundsConfirmations
+  auth: fapi-oauth2

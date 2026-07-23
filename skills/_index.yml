@@ -1,0 +1,16 @@
+generated: '2026-07-23'
+method: generated
+note: Agent Skills grounded in verified OBIE operationIds from the harvested Bank of Ireland (UK) specs.
+skills:
+- file: bank-of-ireland-uk-open-data.md
+  name: Query Bank of Ireland (UK) Open Data (branches, ATMs, products)
+  api: openapi/bank-of-ireland-uk-open-data-openapi.json
+  operations: [GET /branches, GET /atms, GET /personal-current-accounts, GET /business-current-accounts, GET /unsecured-sme-loans, GET /commercial-credit-cards]
+- file: bank-of-ireland-uk-account-information.md
+  name: Read a customer's accounts and transactions (AIS)
+  api: openapi/bank-of-ireland-uk-account-info-openapi.yaml
+  operations: [CreateAccountAccessConsents, GetAccountAccessConsentsConsentId, GetAccounts, GetAccountsAccountId, GetAccountsAccountIdBalances, GetAccountsAccountIdTransactions]
+- file: bank-of-ireland-uk-domestic-payment.md
+  name: Initiate a domestic payment (PIS)
+  api: openapi/bank-of-ireland-uk-payment-initiation-openapi.yaml
+  operations: [CreateDomesticPaymentConsents, GetDomesticPaymentConsentsConsentId, GetDomesticPaymentConsentsConsentIdFundsConfirmation, CreateDomesticPayments, GetDomesticPaymentsDomesticPaymentId]

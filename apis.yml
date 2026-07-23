@@ -142,6 +142,46 @@ apis:
   - type: Authentication
     url: https://developer.bankofireland.com/
 common:
+- type: AgenticAccess
+  url: agentic-access/bank-of-ireland-uk-agentic-access.yml
+- type: DomainSecurity
+  url: security/bank-of-ireland-uk-domain-security.yml
+- type: OAuthScopes
+  url: scopes/bank-of-ireland-uk-scopes.yml
+- type: Authentication
+  url: authentication/bank-of-ireland-uk-authentication.yml
+- type: WellKnown
+  url: well-known/bank-of-ireland-uk-well-known.yml
+- type: Conformance
+  url: conformance/bank-of-ireland-uk-conformance.yml
+- type: ErrorCatalog
+  url: errors/bank-of-ireland-uk-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/bank-of-ireland-uk-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/bank-of-ireland-uk-lifecycle.yml
+- type: Conventions
+  url: conventions/bank-of-ireland-uk-conventions.yml
+- type: Idempotency
+  url: conventions/bank-of-ireland-uk-conventions.yml
+- type: DataModel
+  url: data-model/bank-of-ireland-uk-data-model.yml
+- type: MCPServer
+  url: mcp/bank-of-ireland-uk-mcp.yml
+- type: LLMsTxt
+  url: llms/bank-of-ireland-uk-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Overlay
+  url: overlays/bank-of-ireland-uk-open-data-overlay.yaml
+- type: Overlay
+  url: overlays/bank-of-ireland-uk-account-info-overlay.yaml
+- type: Overlay
+  url: overlays/bank-of-ireland-uk-payment-initiation-overlay.yaml
+- type: Overlay
+  url: overlays/bank-of-ireland-uk-confirmation-funds-overlay.yaml
+- type: GettingStarted
+  url: https://eu1.anypoint.mulesoft.com/exchange/portals/bankofireland/pages/Getting%20Started/
 - type: Website
   url: https://www.bankofirelanduk.com/
 - type: DeveloperPortal

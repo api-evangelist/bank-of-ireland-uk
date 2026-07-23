@@ -1,0 +1,24 @@
+generated: '2026-07-23'
+method: searched
+source: review.yml, developer.bankofireland.com, openbankinguk.github.io
+note: >-
+  Versioning and operational transparency for the Bank of Ireland (UK) OBIE
+  surface. Versions follow the OBIE release train rather than a bank-proprietary
+  scheme. The Open Data API is served live at v2.2; v2.3/v3.0 paths returned 503
+  at review time. The Read/Write family conforms to OBIE 3.1; DCR is at v3.3.
+versioning:
+  scheme: uri-path
+  open_data_current: v2.2
+  read_write_current: v3.1
+  dcr_current: v3.3
+  standard: OBIE Open Banking (release-train versioned)
+  docs: https://developer.bankofireland.com/
+deprecation:
+  policy: OBIE ASPSP version-management; older Open Data (v2.3/v3.0) and Read/Write versions are retired per the OBIE release schedule.
+  sunset_header: false
+  note: BOI historically documented AIS v2.0/v3.0 and PIS v1.1/v3.0; superseded by OBIE 3.1.
+sla:
+  url: https://www.bankofirelanduk.com/personal/api-statistics/
+  note: FCA-mandated Open Banking API availability and performance metrics published monthly (uptime, response time, TPP-reported failures).
+status_page: https://www.bankofirelanduk.com/personal/api-statistics/
+deprecated_operations: []

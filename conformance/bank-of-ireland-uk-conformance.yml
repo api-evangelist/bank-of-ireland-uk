@@ -1,0 +1,40 @@
+generated: '2026-07-23'
+method: searched
+source: well-known/bank-of-ireland-uk-openid-configuration.json, openapi/*.yaml, review.yml
+note: >-
+  Standards posture for a UK CMA9 ASPSP. Evidence is drawn from the live FAPI
+  OpenID discovery document and the harvested OBIE Read/Write and Open Data
+  specifications. Bank of Ireland (UK) implements the UK Open Banking (OBIE)
+  standard as a PSD2-regulated account servicing payment service provider.
+standards:
+- id: oauth2
+  conforms: true
+  evidence: securitySchemes type oauth2 (authorizationCode + clientCredentials); token/authorization endpoints live in OIDC discovery.
+- id: oidc
+  conforms: true
+  evidence: /.well-known/openid-configuration present; response_types "code id_token"; id_token PS256.
+- id: fapi
+  conforms: true
+  evidence: PS256 request objects, tls_client_auth, tls_client_certificate_bound_access_tokens=true, acr urn:openbanking:psd2:sca, response_mode fragment - FAPI 1.0 Advanced profile.
+- id: psd2
+  conforms: true
+  evidence: UK CMA9 ASPSP under PSD2; strong customer authentication (SCA) enforced via acr urn:openbanking:psd2:sca.
+- id: open-banking-uk-obie
+  conforms: true
+  evidence: OBIE Read/Write 3.1 (AIS/PIS/CBPII) and OBIE Open Data 2.2 served live; ASPSP FAPI ID 0015800000jfQ9aAAE on the Open Banking Directory.
+- id: obie-dcr
+  conforms: true
+  evidence: registration_endpoint /1/api/open-banking/v3.3/register (OBIE Dynamic Client Registration) advertised in OIDC discovery.
+- id: mutual-tls
+  conforms: true
+  evidence: token_endpoint_auth_methods tls_client_auth; FAPI host requires OB/eIDAS client certificate (confirmed in review).
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: no RFC 9116 security.txt at any probed host.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: OBIE errors use the OBErrorResponse1 envelope (application/json), not application/problem+json.
+- id: fhir-r4
+  conforms: false
+- id: scim
+  conforms: false

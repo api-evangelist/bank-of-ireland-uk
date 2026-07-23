@@ -1,0 +1,32 @@
+# Bank of Ireland (UK)
+
+> Bank of Ireland (UK) plc is the UK banking arm of Bank of Ireland Group and one of the UK CMA9 banks. It participates in the UK Open Banking (OBIE) programme under PSD2, publishing a public unauthenticated Open Data API and the FAPI-secured OBIE Read/Write family (AIS, PIS, CBPII) onboarded through the Bank of Ireland Developer Hub.
+
+## APIs
+- [Open Data API](https://openapi.bankofireland.com/open-banking/v2.2): Public OBIE Open Data - ATMs, branches, PCA/BCA, SME loans, commercial credit cards. Live (HTTP 200).
+- [Account & Transaction Information (AIS)](https://api.obapi.bankofireland.com/open-banking/v3.1/aisp): OBIE Read/Write AIS. FAPI-secured (OAuth2/OIDC, PSD2 SCA, mTLS).
+- [Payment Initiation (PIS)](https://api.obapi.bankofireland.com/open-banking/v3.1/pisp): OBIE Read/Write PIS. FAPI-secured.
+- [Confirmation of Funds (CBPII)](https://api.obapi.bankofireland.com/open-banking/v3.1/cbpii): OBIE Read/Write CBPII. FAPI-secured.
+- [Dynamic Client Registration (DCR)](https://api.obapi.bankofireland.com/1/api/open-banking/v3.3/register): OBIE DCR for TPP app onboarding with OB/eIDAS certs.
+
+## Specs
+- [Open Data OpenAPI](openapi/bank-of-ireland-uk-open-data-openapi.json)
+- [Account Info OpenAPI](openapi/bank-of-ireland-uk-account-info-openapi.yaml)
+- [Payment Initiation OpenAPI](openapi/bank-of-ireland-uk-payment-initiation-openapi.yaml)
+- [Confirmation of Funds OpenAPI](openapi/bank-of-ireland-uk-confirmation-funds-openapi.yaml)
+
+## Auth
+- [OpenID discovery (live FAPI)](https://auth.obapi.bankofireland.com/.well-known/openid-configuration)
+- [Authentication profile](authentication/bank-of-ireland-uk-authentication.yml): FAPI OAuth2/OIDC over mutual-TLS; PS256; PSD2 SCA; certificate-bound tokens.
+- [OAuth scopes](scopes/bank-of-ireland-uk-scopes.yml): openid, accounts, payments, fundsconfirmations.
+
+## Docs
+- [Developer Hub](https://developer.bankofireland.com/)
+- [MuleSoft Anypoint portal](https://eu1.anypoint.mulesoft.com/exchange/portals/bankofireland/)
+- [API statistics / status](https://www.bankofirelanduk.com/personal/api-statistics/)
+- [OBIE Open Data API reference](https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/)
+
+## Conventions
+- [API conventions](conventions/bank-of-ireland-uk-conventions.yml): idempotency (x-idempotency-key, 24h), x-fapi-interaction-id tracing, PS256 x-jws-signature, Links pagination.
+- [Error catalog](errors/bank-of-ireland-uk-problem-types.yml): OBErrorResponse1 envelope, UK.OBIE.* error codes.
+- [Lifecycle](lifecycle/bank-of-ireland-uk-lifecycle.yml): OBIE release-train versioning; Open Data v2.2, Read/Write v3.1.

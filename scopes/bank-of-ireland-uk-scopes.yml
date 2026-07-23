@@ -1,0 +1,52 @@
+generated: '2026-07-23'
+method: searched
+source: openapi/bank-of-ireland-uk-account-info-openapi.yaml, openapi/bank-of-ireland-uk-confirmation-funds-openapi.yaml, openapi/bank-of-ireland-uk-payment-initiation-openapi.yaml
+docs: https://auth.obapi.bankofireland.com/.well-known/openid-configuration
+note: >-
+  Scope surface upgraded from the OBIE spec placeholders using the LIVE FAPI
+  OpenID discovery document at the Bank of Ireland (UK) UK authorization host
+  (https://auth.obapi.bankofireland.com). The discovery document advertises
+  scopes_supported [openid, payments, accounts]; the OBIE Read/Write CBPII spec
+  adds the fundsconfirmations scope. Real token/authorization endpoints replace
+  the spec's authserver.example placeholders. Tokens are mutual-TLS
+  certificate-bound (tls_client_certificate_bound_access_tokens=true) and access
+  requires PSD2 SCA (acr urn:openbanking:psd2:sca).
+schemes:
+- name: PSUOAuth2Security
+  type: oauth2
+  source: well-known/bank-of-ireland-uk-openid-configuration.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.obapi.bankofireland.com/oauth/as/b365/authorization.oauth2
+    tokenUrl: https://api.obapi.bankofireland.com/oauth/as/token.oauth2
+  description: >-
+    PSU authorization-code flow (hybrid code id_token, response_mode fragment,
+    PS256 request objects) used when the PSU performs SCA with the ASPSP.
+- name: TPPOAuth2Security
+  type: oauth2
+  source: well-known/bank-of-ireland-uk-openid-configuration.json
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://api.obapi.bankofireland.com/oauth/as/token.oauth2
+  description: TPP client-credentials flow with the ASPSP (tls_client_auth).
+scopes:
+- scope: openid
+  description: OpenID Connect authentication; required to obtain an id_token and the openbanking_intent_id claim.
+  flows: [authorizationCode]
+  sources: [well-known/bank-of-ireland-uk-openid-configuration.json]
+- scope: accounts
+  description: Read access to account, balance, transaction, beneficiary, standing-order, direct-debit and product information (AIS).
+  flows: [authorizationCode, clientCredentials]
+  sources:
+  - well-known/bank-of-ireland-uk-openid-configuration.json
+  - openapi/bank-of-ireland-uk-account-info-openapi.yaml
+- scope: payments
+  description: Initiate domestic/international single, scheduled, standing-order and file payments (PIS).
+  flows: [authorizationCode, clientCredentials]
+  sources:
+  - well-known/bank-of-ireland-uk-openid-configuration.json
+  - openapi/bank-of-ireland-uk-payment-initiation-openapi.yaml
+- scope: fundsconfirmations
+  description: Confirm availability of funds on a PSU account for a card-based payment instrument issuer (CBPII).
+  flows: [authorizationCode, clientCredentials]
+  sources: [openapi/bank-of-ireland-uk-confirmation-funds-openapi.yaml]

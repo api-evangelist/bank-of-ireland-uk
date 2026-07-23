@@ -1,0 +1,46 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/bank-of-ireland-uk-account-info-openapi.yaml, openapi/bank-of-ireland-uk-payment-initiation-openapi.yaml, openapi/bank-of-ireland-uk-confirmation-funds-openapi.yaml, well-known/bank-of-ireland-uk-openid-configuration.json
+note: >-
+  Cross-cutting request/response semantics for the Bank of Ireland (UK) OBIE
+  Read/Write APIs, derived from the OBIE 3.1 specifications and the live FAPI
+  OIDC discovery document. These are the OBIE Open Banking conventions the bank
+  implements.
+authentication:
+  style: FAPI OAuth2 / OpenID Connect over mutual-TLS
+  flows: [authorizationCode (PSU/SCA), clientCredentials (TPP)]
+  token_binding: mutual-TLS certificate-bound access tokens
+  reference: authentication/bank-of-ireland-uk-authentication.yml
+idempotency:
+  supported: true
+  header: x-idempotency-key
+  scope: per POST payment/consent creation request
+  retention: 24 hours
+  behaviour: Every request is processed only once per x-idempotency-key; reuse with a different payload returns 409.
+  max_length: 40
+  note: OBIE-standard idempotency; applies to PIS payment creation and consent POST operations.
+request_tracing:
+  header: x-fapi-interaction-id
+  behaviour: TPP-supplied RFC4122 UUID echoed back by the ASPSP to correlate a request/response pair end-to-end.
+  related_headers: [x-fapi-auth-date, x-fapi-customer-ip-address, x-customer-user-agent, x-client-id]
+message_signing:
+  header: x-jws-signature
+  algorithm: PS256 (detached JWS)
+  note: Required on selected payment/file operations per the OBIE non-repudiation requirements.
+pagination:
+  style: cursor-links
+  response_fields: [Links.Self, Links.First, Links.Prev, Links.Next, Links.Last, Meta.TotalPages, Meta.FirstAvailableDateTime, Meta.LastAvailableDateTime]
+  note: OBIE resource collections page via the Links object; date-filterable resources expose Meta availability windows.
+versioning:
+  style: uri-path (OBIE release train)
+  reference: lifecycle/bank-of-ireland-uk-lifecycle.yml
+error_envelope:
+  schema: OBErrorResponse1
+  fields: [Code, Id, Message, Errors]
+  reference: errors/bank-of-ireland-uk-problem-types.yml
+rate_limiting:
+  signal: HTTP 429
+  note: Per-TPP rate limits enforced by the ASPSP; retry on 429.
+content_negotiation:
+  read_write: application/json
+  open_data: application/prs.openbanking.opendata.v2.2+json (send no Accept header or Accept:*/*; explicit application/json returns 406)

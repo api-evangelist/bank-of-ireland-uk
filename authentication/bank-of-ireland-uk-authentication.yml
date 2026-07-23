@@ -1,0 +1,72 @@
+generated: '2026-07-23'
+method: searched
+source: well-known/bank-of-ireland-uk-openid-configuration.json, openapi/bank-of-ireland-uk-account-info-openapi.yaml, openapi/bank-of-ireland-uk-payment-initiation-openapi.yaml, openapi/bank-of-ireland-uk-confirmation-funds-openapi.yaml
+docs: https://developer.bankofireland.com/
+note: >-
+  FAPI-grade profile confirmed against the LIVE UK FAPI OpenID discovery document
+  at https://auth.obapi.bankofireland.com/.well-known/openid-configuration
+  (issuer https://auth.obapi.bankofireland.com, OBIE version 3.1). Endpoints,
+  signing algorithms and client-auth method are the real published values, not
+  the OBIE spec's authserver.example placeholders.
+summary:
+  types: [oauth2, openIdConnect, mutualTLS]
+  oauth2_flows: [authorizationCode, clientCredentials]
+  grant_types_supported: [authorization_code, refresh_token, client_credentials]
+  response_types_supported: [code id_token]
+  token_endpoint_auth_methods: [tls_client_auth]
+  id_token_signing_alg: [PS256]
+  request_object_signing_alg: [PS256]
+  acr_values: [urn:openbanking:psd2:sca]
+  mtls_bound_tokens: true
+  sca_required: true
+endpoints:
+  issuer: https://auth.obapi.bankofireland.com
+  authorization_endpoint: https://auth.obapi.bankofireland.com/oauth/as/b365/authorization.oauth2
+  token_endpoint: https://api.obapi.bankofireland.com/oauth/as/token.oauth2
+  revocation_endpoint: https://api.obapi.bankofireland.com/oauth/as/revoke_token.oauth2
+  jwks_uri: https://auth.obapi.bankofireland.com/pf/JWKS
+  registration_endpoint: https://api.obapi.bankofireland.com/1/api/open-banking/v3.3/register
+schemes:
+- name: PSUOAuth2Security
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.obapi.bankofireland.com/oauth/as/b365/authorization.oauth2
+    tokenUrl: https://api.obapi.bankofireland.com/oauth/as/token.oauth2
+    scopes: [openid, accounts, payments, fundsconfirmations]
+  description: >-
+    PSU consent flow requiring PSD2 strong customer authentication (SCA). Hybrid
+    response type code id_token, response_mode fragment, PS256-signed request
+    objects; carries the openbanking_intent_id claim.
+  sources:
+  - well-known/bank-of-ireland-uk-openid-configuration.json
+  - openapi/bank-of-ireland-uk-account-info-openapi.yaml
+- name: TPPOAuth2Security
+  type: oauth2
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://api.obapi.bankofireland.com/oauth/as/token.oauth2
+    scopes: [accounts, payments, fundsconfirmations]
+  description: TPP client-credentials flow with the ASPSP for consent creation and back-channel calls.
+  sources:
+  - well-known/bank-of-ireland-uk-openid-configuration.json
+  - openapi/bank-of-ireland-uk-payment-initiation-openapi.yaml
+- name: mutualTLS
+  type: mutualTLS
+  description: >-
+    Mutual-TLS client authentication (tls_client_auth) using OBIE/eIDAS transport
+    (OBWAC) certificates; access tokens are certificate-bound. This is the
+    transport-layer client authentication the FAPI host enforces before any OAuth
+    exchange.
+  sources: [well-known/bank-of-ireland-uk-openid-configuration.json]
+- name: OpenIDConnect
+  type: openIdConnect
+  openIdConnectUrl: https://auth.obapi.bankofireland.com/.well-known/openid-configuration
+  description: OpenID Connect discovery for the UK ASPSP (FAPI ID 0015800000jfQ9aAAE).
+  sources: [well-known/bank-of-ireland-uk-openid-configuration.json]
+onboarding: >-
+  TPPs must be enrolled on the FCA/OBIE Open Banking Directory and onboard to the
+  Bank of Ireland (UK) entity separately from Bank of Ireland (ROI). Client
+  applications are registered via OBIE Dynamic Client Registration (DCR) at the
+  registration_endpoint using a signed software statement and OB/eIDAS
+  certificates.

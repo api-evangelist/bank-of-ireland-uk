@@ -1,0 +1,63 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/bank-of-ireland-uk-account-info-openapi.yaml, openapi/bank-of-ireland-uk-payment-initiation-openapi.yaml, openapi/bank-of-ireland-uk-confirmation-funds-openapi.yaml
+format: obie-error-response
+note: >-
+  Error catalog derived from the HTTP status responses declared across the OBIE
+  Read/Write specs. OBIE does NOT use RFC 9457 problem+json; errors return the
+  OBErrorResponse1 envelope (application/json) with a top-level Code, Id, Message
+  and an Errors[] array of {ErrorCode, Message, Path, Url}. ErrorCode values use
+  the UK.OBIE.* namespace (e.g. UK.OBIE.Field.Missing, UK.OBIE.Resource.NotFound,
+  UK.OBIE.Unsupported.Scheme). The public Open Data API is unauthenticated and
+  additionally returns 406 on an explicit Accept: application/json header (use no
+  Accept header or Accept: */*).
+envelope:
+  schema: OBErrorResponse1
+  media_type: application/json
+  fields: [Code, Id, Message, Errors]
+  error_item_fields: [ErrorCode, Message, Path, Url]
+problems:
+- status: 400
+  title: Bad request
+  meaning: Malformed request or a business validation failure; Errors[] carries UK.OBIE.* ErrorCodes and JSON Paths.
+  response: 400Error (OBErrorResponse1)
+- status: 401
+  title: Unauthorized
+  meaning: Missing, invalid or expired access token, or failed mutual-TLS client authentication.
+  response: 401Error
+- status: 403
+  title: Forbidden
+  meaning: Token lacks the required scope/consent, or the resource is not permitted for this TPP.
+  response: 403Error
+- status: 404
+  title: Not found
+  meaning: Consent, account or resource id does not exist (UK.OBIE.Resource.NotFound).
+  response: 404Error
+- status: 405
+  title: Method not allowed
+  meaning: HTTP method not supported for the resource.
+  response: 405Error
+- status: 406
+  title: Not acceptable
+  meaning: Requested Accept media type cannot be served (note the Open Data 406-on-application/json behaviour).
+  response: 406Error
+- status: 409
+  title: Conflict
+  meaning: Idempotency-key reuse with a different payload, or a conflicting resource state.
+  response: 409Error
+- status: 415
+  title: Unsupported media type
+  meaning: Request Content-Type is not supported.
+  response: 415Error
+- status: 422
+  title: Unprocessable entity
+  meaning: Request understood but the payment/consent instruction cannot be processed (e.g. UK.OBIE.Rules.* violation).
+  response: 422Error
+- status: 429
+  title: Too many requests
+  meaning: Rate limit exceeded; retry after the indicated interval.
+  response: 429Error
+- status: 500
+  title: Internal server error
+  meaning: Unexpected ASPSP-side failure.
+  response: 500Error
