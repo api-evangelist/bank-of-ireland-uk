@@ -1,0 +1,126 @@
+aid: bank-of-ireland-uk
+name: Bank of Ireland (UK)
+review:
+  question: >-
+    Does Bank of Ireland (UK) plc expose a real, documented public API surface,
+    and can a live OBIE Open Data endpoint be confirmed?
+  answer: true
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    Bank of Ireland (UK) plc has a genuine public API posture as one of the UK
+    CMA9. It operates a Developer Hub at https://developer.bankofireland.com/
+    (HTTP 200) plus a MuleSoft Anypoint Exchange developer portal at
+    https://eu1.anypoint.mulesoft.com/exchange/portals/bankofireland/ (HTTP 200),
+    and publishes FCA Open Banking API availability/performance metrics at
+    https://www.bankofirelanduk.com/personal/api-statistics/ (HTTP 200).
+
+    OPEN DATA (PUBLIC, UNAUTHENTICATED) - CONFIRMED LIVE. The OBIE Open Data API
+    was confirmed returning HTTP 200 with valid JSON on 2026-07-23 at base
+    https://openapi.bankofireland.com/open-banking/v2.2. All six standard Open
+    Data datasets responded 200: /atms, /branches, /personal-current-accounts,
+    /business-current-accounts, /unsecured-sme-loans and /commercial-credit-cards.
+    The /atms payload carries BrandName "Bank of Ireland (UK) plc" and the OBIE
+    Open Licence terms. NOTE ON CONTENT NEGOTIATION: the endpoint returns HTTP
+    406 ("The application does not accept the header requests") when an explicit
+    Accept: application/json header is sent; a request with no Accept header or
+    Accept: */* returns HTTP 200. The v2.2 path is live; v2.3/v3.0 paths returned
+    HTTP 503 at review time.
+
+    READ/WRITE (FAPI-SECURED) - DOCUMENTED, NOT DIRECTLY VERIFIABLE. The OBIE
+    Read/Write family (AIS, PIS, CBPII) is documented on the Developer Hub. The
+    production UK Read/Write host https://api.obapi.bankofireland.com resolves
+    (34.255.35.141) and terminates TLS but requires mutual-TLS client
+    authentication (the connection presents an OB-issued certificate chain our
+    trust store rejects and requires a client cert), which is the expected FAPI
+    behaviour - it cannot be exercised without OBIE/eIDAS certificates and TPP
+    onboarding, so the base URL is recorded as the documented OBIE-standard path
+    shape on the confirmed FAPI host, not an anonymously verified endpoint. The
+    published UK authorization host is https://auth.obapi.bankofireland.com/oauth/as/b365/
+    (Bank of Ireland UK ASPSP FAPI ID 0015800000jfQ9aAAE). BOI documents AIS
+    v2.0/v3.0 and PIS v1.1/v3.0 historically; the harvested Read/Write specs are
+    the OBIE 3.1 standard the bank conforms to.
+
+    AUTH MODEL: FAPI-grade OAuth2/OIDC with OpenID Connect, PSD2 strong customer
+    authentication (SCA), mutual-TLS client authentication, and OBIE Dynamic
+    Client Registration using OBIE/eIDAS certificates. TPPs must present a full
+    certificate chain (intermediate + leaf) and onboard to the UK entity
+    separately from the ROI entity.
+  specProvenance:
+    openData:
+      file: openapi/bank-of-ireland-uk-open-data-openapi.json
+      provenance: OBIE-standard
+      source: >-
+        github.com/OpenBankingUK/opendata-api-spec-compiled/opendata-swagger.json
+      note: >-
+        Shared OBIE Open Data Standard specification (Swagger 2.0, "Open Data
+        API" v1.3), not a Bank of Ireland proprietary contract. Bank of Ireland
+        (UK) serves this standard live at the confirmed v2.2 base URL.
+    accountInformation:
+      file: openapi/bank-of-ireland-uk-account-info-openapi.yaml
+      provenance: OBIE-standard
+      source: github.com/OpenBankingUK/read-write-api-specs/dist/openapi/account-info-openapi.yaml
+      note: OpenAPI 3.0.0 "Account and Transaction API Specification" - shared OBIE standard.
+    paymentInitiation:
+      file: openapi/bank-of-ireland-uk-payment-initiation-openapi.yaml
+      provenance: OBIE-standard
+      source: github.com/OpenBankingUK/read-write-api-specs/dist/openapi/payment-initiation-openapi.yaml
+      note: OpenAPI 3.0.0 "Payment Initiation API" - shared OBIE standard.
+    confirmationOfFunds:
+      file: openapi/bank-of-ireland-uk-confirmation-funds-openapi.yaml
+      provenance: OBIE-standard
+      source: github.com/OpenBankingUK/read-write-api-specs/dist/openapi/confirmation-funds-openapi.yaml
+      note: OpenAPI 3.0.0 "Confirmation of Funds API Specification" - shared OBIE standard.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+      documented: true
+      confirmedLive: true
+      note: Public OBIE Open Data API. HTTP 200 confirmed 2026-07-23 (no Accept header or Accept:*/*).
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.obapi.bankofireland.com/open-banking/v3.1/aisp
+      documented: true
+      confirmedLive: false
+      note: OBIE Read/Write AIS. Host resolves and requires mTLS (FAPI); base is the documented OBIE-standard path shape.
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.obapi.bankofireland.com/open-banking/v3.1/pisp
+      documented: true
+      confirmedLive: false
+      note: OBIE Read/Write PIS. FAPI-secured, mTLS required.
+    - protocol: REST
+      scheme: https
+      baseURL: https://api.obapi.bankofireland.com/open-banking/v3.1/cbpii
+      documented: true
+      confirmedLive: false
+      note: OBIE Read/Write CBPII. FAPI-secured, mTLS required.
+  openDataEndpointsConfirmed:
+    - GET https://openapi.bankofireland.com/open-banking/v2.2/atms
+    - GET https://openapi.bankofireland.com/open-banking/v2.2/branches
+    - GET https://openapi.bankofireland.com/open-banking/v2.2/personal-current-accounts
+    - GET https://openapi.bankofireland.com/open-banking/v2.2/business-current-accounts
+    - GET https://openapi.bankofireland.com/open-banking/v2.2/unsecured-sme-loans
+    - GET https://openapi.bankofireland.com/open-banking/v2.2/commercial-credit-cards
+sources:
+  - url: https://developer.bankofireland.com/
+    type: DeveloperPortal
+    status: 200
+    note: Bank of Ireland Developer Hub landing page.
+  - url: https://eu1.anypoint.mulesoft.com/exchange/portals/bankofireland/pages/Getting%20Started/
+    type: Documentation
+    status: 200
+    note: MuleSoft Anypoint Exchange portal; documents DCR, QTSP Batch, Open Data, AISP/PISP/CBPII, UK auth hosts.
+  - url: https://openapi.bankofireland.com/open-banking/v2.2/atms
+    type: APIReference
+    status: 200
+    note: Live public Open Data ATM endpoint; JSON payload BrandName "Bank of Ireland (UK) plc".
+  - url: https://www.bankofirelanduk.com/personal/api-statistics/
+    type: StatusPage
+    status: 200
+    note: FCA-mandated Open Banking API availability and performance metrics.
+  - url: https://openbanking.atlassian.net/wiki/spaces/AD/pages/1132069126/
+    type: Documentation
+    note: OBIE ASPSP documentation page for Bank of Ireland (UK) Plc.

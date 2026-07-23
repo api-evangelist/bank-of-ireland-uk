@@ -1,0 +1,167 @@
+aid: bank-of-ireland-uk
+url: https://raw.githubusercontent.com/api-evangelist/bank-of-ireland-uk/refs/heads/main/apis.yml
+name: Bank of Ireland (UK)
+kind: company
+description: >-
+  Bank of Ireland (UK) plc is the UK banking arm of Bank of Ireland Group plc,
+  Ireland's oldest bank, founded in 1783 and headquartered in Dublin with a
+  listing on Euronext Dublin and the London Stock Exchange. In the United
+  Kingdom it is authorised by the Prudential Regulation Authority and regulated
+  by the Financial Conduct Authority and the PRA, and as one of the nine
+  CMA-mandated banks (the CMA9) it participates fully in the UK Open Banking
+  programme under PSD2. Bank of Ireland (UK) and Bank of Ireland (ROI) are
+  separate legal entities on the Open Banking Directory and TPPs must onboard to
+  each separately. The bank publishes a public, unauthenticated Open Data API
+  (ATMs, branches, personal and business current accounts, unsecured SME loans
+  and commercial credit cards) conformant to the OBIE Open Data Standard,
+  alongside the OBIE Read/Write API family - Account & Transaction Information
+  (AIS), Payment Initiation (PIS) and Confirmation of Funds (CBPII) - secured
+  with FAPI-grade OAuth2/OIDC, PSD2 strong customer authentication and mutual-TLS
+  client authentication using OBIE/eIDAS certificates, onboarded through the Bank
+  of Ireland Developer Hub with a sandbox for testing.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Financial Services
+- Banking
+- Open Banking
+- PSD2
+- OBIE
+- CMA9
+- United Kingdom
+- Payments
+- Account Information
+- Open Data
+- FAPI
+- Fintech
+created: '2026-07-23'
+modified: '2026-07-23'
+specificationVersion: '0.19'
+apis:
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-open-data-api
+  name: Bank of Ireland (UK) Open Data API
+  description: >-
+    Public, unauthenticated OBIE Open Data API for Bank of Ireland (UK) plc,
+    serving reference data for ATMs, branches, personal current accounts,
+    business current accounts, unsecured SME loans and commercial credit cards.
+    Confirmed live (HTTP 200) at the v2.2 base on 2026-07-23.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Open Data
+  - ATMs
+  - Branches
+  - Personal Current Accounts
+  - Business Current Accounts
+  - SME Loans
+  - Commercial Credit Cards
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-open-data-openapi.json
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-account-information-api
+  name: Bank of Ireland (UK) Account & Transaction Information API
+  description: >-
+    OBIE Read/Write Account & Transaction Information (AIS) API for Bank of
+    Ireland (UK) plc, allowing authorised AISPs to access account, balance,
+    transaction, beneficiary, standing order, direct debit and product data with
+    the customer's consent. FAPI-secured (OAuth2/OIDC, PSD2 SCA, mTLS).
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://api.obapi.bankofireland.com/open-banking/v3.1/aisp
+  tags:
+  - Account Information
+  - AISP
+  - Read/Write
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-account-info-openapi.yaml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-payment-initiation-api
+  name: Bank of Ireland (UK) Payment Initiation API
+  description: >-
+    OBIE Read/Write Payment Initiation (PIS) API for Bank of Ireland (UK) plc,
+    enabling authorised PISPs to initiate domestic and international single,
+    scheduled, standing-order and file payments with the customer's consent.
+    FAPI-secured (OAuth2/OIDC, PSD2 SCA, mTLS).
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://api.obapi.bankofireland.com/open-banking/v3.1/pisp
+  tags:
+  - Payments
+  - Payment Initiation
+  - PISP
+  - Read/Write
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-payment-initiation-openapi.yaml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-confirmation-of-funds-api
+  name: Bank of Ireland (UK) Confirmation of Funds API
+  description: >-
+    OBIE Read/Write Confirmation of Funds (CBPII) API for Bank of Ireland (UK)
+    plc, allowing authorised card-based payment instrument issuers to confirm the
+    availability of funds on a customer account with consent. FAPI-secured
+    (OAuth2/OIDC, PSD2 SCA, mTLS).
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://api.obapi.bankofireland.com/open-banking/v3.1/cbpii
+  tags:
+  - Confirmation of Funds
+  - CBPII
+  - Read/Write
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-confirmation-funds-openapi.yaml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-dynamic-client-registration-api
+  name: Bank of Ireland (UK) Dynamic Client Registration API
+  description: >-
+    OBIE Dynamic Client Registration (DCR) API documented on the Bank of Ireland
+    Developer Hub for onboarding third-party provider applications using
+    OBIE/eIDAS certificates, ahead of consuming the Read/Write API family.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://auth.obapi.bankofireland.com/oauth/as/b365/
+  tags:
+  - Dynamic Client Registration
+  - Onboarding
+  - OAuth2
+  properties:
+  - type: Documentation
+    url: https://eu1.anypoint.mulesoft.com/exchange/portals/bankofireland/pages/Getting%20Started/
+  - type: Authentication
+    url: https://developer.bankofireland.com/
+common:
+- type: Website
+  url: https://www.bankofirelanduk.com/
+- type: DeveloperPortal
+  url: https://developer.bankofireland.com/
+- type: Portal
+  url: https://eu1.anypoint.mulesoft.com/exchange/portals/bankofireland/
+- type: Documentation
+  url: https://developer.bankofireland.com/
+- type: StatusPage
+  url: https://www.bankofirelanduk.com/personal/api-statistics/
+- type: Compliance
+  url: https://www.bankofirelanduk.com/personal/api-statistics/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/bank-of-ireland/
+- type: PrivacyPolicy
+  url: https://www.bankofirelanduk.com/site-links/privacy/
+- type: Support
+  url: https://www.bankofirelanduk.com/help-and-support/
+- type: License
+  url: https://www.openbanking.org.uk/open-licence
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
