@@ -35,7 +35,7 @@ tags:
 - Fintech
 created: '2026-07-23'
 modified: '2026-07-23'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: bank-of-ireland-uk:bank-of-ireland-uk-open-data-api
   name: Bank of Ireland (UK) Open Data API
