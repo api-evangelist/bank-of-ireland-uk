@@ -2,13 +2,11 @@ generated: '2026-07-23'
 method: derived
 status: candidate
 source: openapi/*.yaml, openapi/bank-of-ireland-uk-open-data-openapi.json
-note: >-
-  No official hosted MCP server was found for Bank of Ireland (UK). This is a
-  candidate tool list derived from the OpenAPI operations. The Open Data tools
-  are anonymously callable (public OBIE Open Data API); every Read/Write tool
-  requires FAPI OAuth2 + PSD2 SCA + mutual-TLS with OB/eIDAS certificates and TPP
-  onboarding, so a real MCP deployment must carry a certificate-bound token per
-  the agentic-access contracts.
+note: No official hosted MCP server was found for Bank of Ireland (UK). This is a candidate tool list
+  derived from the OpenAPI operations. The Open Data tools are anonymously callable (public OBIE Open
+  Data API); every Read/Write tool requires FAPI OAuth2 + PSD2 SCA + mutual-TLS with OB/eIDAS certificates
+  and TPP onboarding, so a real MCP deployment must carry a certificate-bound token per the agentic-access
+  contracts.
 server:
   name: bank-of-ireland-uk
   transport: http
@@ -61,3 +59,9 @@ tools:
   description: Confirm availability of funds on a consented account (CBPII).
   source_operation: openapi/bank-of-ireland-uk-confirmation-funds-openapi.yaml#CreateFundsConfirmations
   auth: fapi-oauth2
+deployment:
+  mode: none
+  verified: derived
+  tools: 12
+  checked: '2026-08-12'
+  source: catalog MCP census
