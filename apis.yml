@@ -21,6 +21,19 @@ description: >-
   of Ireland Developer Hub with a sandbox for testing.
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
+- Financial-Services
+- Banking
+- Open Banking
+- PSD2
+- OBIE
+- CMA9
+- United Kingdom
+- Payments
+- Account Information
+- Open Data
+- FAPI
+- Fintech
+tags_raw:
 - Financial Services
 - Banking
 - Open Banking
@@ -133,6 +146,10 @@ apis:
   humanURL: https://developer.bankofireland.com/
   baseURL: https://auth.obapi.bankofireland.com/oauth/as/b365/
   tags:
+  - Dynamic Client Registration
+  - Onboarding
+  - Authentication
+  tags_raw:
   - Dynamic Client Registration
   - Onboarding
   - OAuth2
