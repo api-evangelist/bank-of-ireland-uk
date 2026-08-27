@@ -50,99 +50,12 @@ created: '2026-07-23'
 modified: '2026-07-23'
 specificationVersion: '0.23'
 apis:
-- aid: bank-of-ireland-uk:bank-of-ireland-uk-open-data-api
-  name: Bank of Ireland (UK) Open Data API
-  description: >-
-    Public, unauthenticated OBIE Open Data API for Bank of Ireland (UK) plc,
-    serving reference data for ATMs, branches, personal current accounts,
-    business current accounts, unsecured SME loans and commercial credit cards.
-    Confirmed live (HTTP 200) at the v2.2 base on 2026-07-23.
-  humanURL: https://developer.bankofireland.com/
-  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
-  tags:
-  - Open Data
-  - ATMs
-  - Branches
-  - Personal Current Accounts
-  - Business Current Accounts
-  - SME Loans
-  - Commercial Credit Cards
-  properties:
-  - type: OpenAPI
-    url: openapi/bank-of-ireland-uk-open-data-openapi.json
-  - type: Documentation
-    url: https://developer.bankofireland.com/
-  - type: APIReference
-    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
-  - type: License
-    url: https://www.openbanking.org.uk/open-licence
-- aid: bank-of-ireland-uk:bank-of-ireland-uk-account-information-api
-  name: Bank of Ireland (UK) Account & Transaction Information API
-  description: >-
-    OBIE Read/Write Account & Transaction Information (AIS) API for Bank of
-    Ireland (UK) plc, allowing authorised AISPs to access account, balance,
-    transaction, beneficiary, standing order, direct debit and product data with
-    the customer's consent. FAPI-secured (OAuth2/OIDC, PSD2 SCA, mTLS).
-  humanURL: https://developer.bankofireland.com/
-  baseURL: https://api.obapi.bankofireland.com/open-banking/v3.1/aisp
-  tags:
-  - Account Information
-  - AISP
-  - Read/Write
-  properties:
-  - type: OpenAPI
-    url: openapi/bank-of-ireland-uk-account-info-openapi.yaml
-  - type: Documentation
-    url: https://developer.bankofireland.com/
-  - type: APIReference
-    url: https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
-- aid: bank-of-ireland-uk:bank-of-ireland-uk-payment-initiation-api
-  name: Bank of Ireland (UK) Payment Initiation API
-  description: >-
-    OBIE Read/Write Payment Initiation (PIS) API for Bank of Ireland (UK) plc,
-    enabling authorised PISPs to initiate domestic and international single,
-    scheduled, standing-order and file payments with the customer's consent.
-    FAPI-secured (OAuth2/OIDC, PSD2 SCA, mTLS).
-  humanURL: https://developer.bankofireland.com/
-  baseURL: https://api.obapi.bankofireland.com/open-banking/v3.1/pisp
-  tags:
-  - Payments
-  - Payment Initiation
-  - PISP
-  - Read/Write
-  properties:
-  - type: OpenAPI
-    url: openapi/bank-of-ireland-uk-payment-initiation-openapi.yaml
-  - type: Documentation
-    url: https://developer.bankofireland.com/
-  - type: APIReference
-    url: https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
-- aid: bank-of-ireland-uk:bank-of-ireland-uk-confirmation-of-funds-api
-  name: Bank of Ireland (UK) Confirmation of Funds API
-  description: >-
-    OBIE Read/Write Confirmation of Funds (CBPII) API for Bank of Ireland (UK)
-    plc, allowing authorised card-based payment instrument issuers to confirm the
-    availability of funds on a customer account with consent. FAPI-secured
-    (OAuth2/OIDC, PSD2 SCA, mTLS).
-  humanURL: https://developer.bankofireland.com/
-  baseURL: https://api.obapi.bankofireland.com/open-banking/v3.1/cbpii
-  tags:
-  - Confirmation of Funds
-  - CBPII
-  - Read/Write
-  properties:
-  - type: OpenAPI
-    url: openapi/bank-of-ireland-uk-confirmation-funds-openapi.yaml
-  - type: Documentation
-    url: https://developer.bankofireland.com/
-  - type: APIReference
-    url: https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
 - aid: bank-of-ireland-uk:bank-of-ireland-uk-dynamic-client-registration-api
   name: Bank of Ireland (UK) Dynamic Client Registration API
   description: >-
-    OBIE Dynamic Client Registration (DCR) API documented on the Bank of Ireland
-    Developer Hub for onboarding third-party provider applications using
-    OBIE/eIDAS certificates, ahead of consuming the Read/Write API family.
+    OBIE Dynamic Client Registration (DCR) API documented on the Bank of Ireland Developer Hub for onboarding
+    third-party provider applications using OBIE/eIDAS certificates, ahead of consuming the Read/Write
+    API family.
   humanURL: https://developer.bankofireland.com/
   baseURL: https://auth.obapi.bankofireland.com/oauth/as/b365/
   tags:
@@ -155,9 +68,888 @@ apis:
   - OAuth2
   properties:
   - type: Documentation
-    url: https://eu1.anypoint.mulesoft.com/exchange/portals/bankofireland/pages/Getting%20Started/
+    url: >-
+      https://eu1.anypoint.mulesoft.com/exchange/portals/bankofireland/pages/Getting%20Started/
   - type: Authentication
     url: https://developer.bankofireland.com/
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-account-access-consents-api
+  name: Bank of Ireland (UK) Account Access Consents API
+  description: >-
+    The Account Access Consents API from Bank of Ireland (UK) — 2 operation(s) for account access consents.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Account Access Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-account-access-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-accounts-api
+  name: Bank of Ireland (UK) Accounts API
+  description: The Accounts API from Bank of Ireland (UK) — 2 operation(s) for accounts.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-atm-api
+  name: Bank of Ireland (UK) ATM API
+  description: Endpoint for getting ATM data
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - ATM
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-atm-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-balances-api
+  name: Bank of Ireland (UK) Balances API
+  description: The Balances API from Bank of Ireland (UK) — 2 operation(s) for balances.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Balances
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-balances-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-bca-api
+  name: Bank of Ireland (UK) BCA API
+  description: Endpoint for getting Business Current Account data
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - BCA
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-bca-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-beneficiaries-api
+  name: Bank of Ireland (UK) Beneficiaries API
+  description: The Beneficiaries API from Bank of Ireland (UK) — 2 operation(s) for beneficiaries.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Beneficiaries
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-beneficiaries-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-branch-api
+  name: Bank of Ireland (UK) Branch API
+  description: Endpoint for getting Branch data
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Branch
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-branch-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-ccc-api
+  name: Bank of Ireland (UK) CCC API
+  description: Endpoint for getting Commercial Credit Card data
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - CCC
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-ccc-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-direct-debits-api
+  name: Bank of Ireland (UK) Direct Debits API
+  description: The Direct Debits API from Bank of Ireland (UK) — 2 operation(s) for direct debits.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Direct Debits
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-direct-debits-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-domestic-payment-consents-api
+  name: Bank of Ireland (UK) Domestic Payment Consents API
+  description: >-
+    The Domestic Payment Consents API from Bank of Ireland (UK) — 3 operation(s) for domestic payment
+    consents.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Domestic Payment Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-domestic-payment-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-domestic-payments-api
+  name: Bank of Ireland (UK) Domestic Payments API
+  description: >-
+    The Domestic Payments API from Bank of Ireland (UK) — 3 operation(s) for domestic payments.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Domestic Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-domestic-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-domestic-scheduled-payment-consents-api
+  name: Bank of Ireland (UK) Domestic Scheduled Payment Consents API
+  description: >-
+    The Domestic Scheduled Payment Consents API from Bank of Ireland (UK) — 2 operation(s) for domestic
+    scheduled payment consents.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Domestic Scheduled Payment Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-domestic-scheduled-payment-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-domestic-scheduled-payments-api
+  name: Bank of Ireland (UK) Domestic Scheduled Payments API
+  description: >-
+    The Domestic Scheduled Payments API from Bank of Ireland (UK) — 3 operation(s) for domestic scheduled
+    payments.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Domestic Scheduled Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-domestic-scheduled-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-domestic-standing-order-consents-api
+  name: Bank of Ireland (UK) Domestic Standing Order Consents API
+  description: >-
+    The Domestic Standing Order Consents API from Bank of Ireland (UK) — 2 operation(s) for domestic standing
+    order consents.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Domestic Standing Order Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-domestic-standing-order-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-domestic-standing-orders-api
+  name: Bank of Ireland (UK) Domestic Standing Orders API
+  description: >-
+    The Domestic Standing Orders API from Bank of Ireland (UK) — 3 operation(s) for domestic standing
+    orders.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Domestic Standing Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-domestic-standing-orders-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-file-payment-consents-api
+  name: Bank of Ireland (UK) File Payment Consents API
+  description: >-
+    The File Payment Consents API from Bank of Ireland (UK) — 3 operation(s) for file payment consents.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - File Payment Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-file-payment-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-file-payments-api
+  name: Bank of Ireland (UK) File Payments API
+  description: The File Payments API from Bank of Ireland (UK) — 4 operation(s) for file payments.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - File Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-file-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-funds-confirmation-consents-api
+  name: Bank of Ireland (UK) Funds Confirmation Consents API
+  description: >-
+    The Funds Confirmation Consents API from Bank of Ireland (UK) — 2 operation(s) for funds confirmation
+    consents.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Funds Confirmation Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-funds-confirmation-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-funds-confirmations-api
+  name: Bank of Ireland (UK) Funds Confirmations API
+  description: >-
+    The Funds Confirmations API from Bank of Ireland (UK) — 1 operation(s) for funds confirmations.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Funds Confirmations
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-funds-confirmations-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-international-payment-consents-api
+  name: Bank of Ireland (UK) International Payment Consents API
+  description: >-
+    The International Payment Consents API from Bank of Ireland (UK) — 3 operation(s) for international
+    payment consents.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - International Payment Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-international-payment-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-international-payments-api
+  name: Bank of Ireland (UK) International Payments API
+  description: >-
+    The International Payments API from Bank of Ireland (UK) — 3 operation(s) for international payments.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - International Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-international-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-international-scheduled-payments-api
+  name: Bank of Ireland (UK) International Scheduled Payments API
+  description: >-
+    The International Scheduled Payments API from Bank of Ireland (UK) — 3 operation(s) for international
+    scheduled payments.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - International Scheduled Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-international-scheduled-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-international-scheduled-payments-consents-api
+  name: Bank of Ireland (UK) International Scheduled Payments Consents API
+  description: >-
+    The International Scheduled Payments Consents API from Bank of Ireland (UK) — 3 operation(s) for international
+    scheduled payments consents.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - International Scheduled Payments Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-international-scheduled-payments-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-international-standing-orders-api
+  name: Bank of Ireland (UK) International Standing Orders API
+  description: >-
+    The International Standing Orders API from Bank of Ireland (UK) — 3 operation(s) for international
+    standing orders.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - International Standing Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-international-standing-orders-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-international-standing-orders-consents-api
+  name: Bank of Ireland (UK) International Standing Orders Consents API
+  description: >-
+    The International Standing Orders Consents API from Bank of Ireland (UK) — 2 operation(s) for international
+    standing orders consents.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - International Standing Orders Consents
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-international-standing-orders-consents-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-offers-api
+  name: Bank of Ireland (UK) Offers API
+  description: The Offers API from Bank of Ireland (UK) — 2 operation(s) for offers.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Offers
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-offers-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-parties-api
+  name: Bank of Ireland (UK) Parties API
+  description: The Parties API from Bank of Ireland (UK) — 3 operation(s) for parties.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Parties
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-parties-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-pca-api
+  name: Bank of Ireland (UK) PCA API
+  description: Endpoint for getting Personal Current Account data
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - PCA
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-pca-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-products-api
+  name: Bank of Ireland (UK) Products API
+  description: The Products API from Bank of Ireland (UK) — 2 operation(s) for products.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Products
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-products-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-scheduled-payments-api
+  name: Bank of Ireland (UK) Scheduled Payments API
+  description: >-
+    The Scheduled Payments API from Bank of Ireland (UK) — 2 operation(s) for scheduled payments.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Scheduled Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-scheduled-payments-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-sme-api
+  name: Bank of Ireland (UK) SME API
+  description: Endpoint for getting Unsecured SME Loan data
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - SME
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-sme-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-standing-orders-api
+  name: Bank of Ireland (UK) Standing Orders API
+  description: The Standing Orders API from Bank of Ireland (UK) — 2 operation(s) for standing orders.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Standing Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-standing-orders-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-statements-api
+  name: Bank of Ireland (UK) Statements API
+  description: The Statements API from Bank of Ireland (UK) — 5 operation(s) for statements.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Statements
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-statements-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
+- aid: bank-of-ireland-uk:bank-of-ireland-uk-transactions-api
+  name: Bank of Ireland (UK) Transactions API
+  description: The Transactions API from Bank of Ireland (UK) — 2 operation(s) for transactions.
+  humanURL: https://developer.bankofireland.com/
+  baseURL: https://openapi.bankofireland.com/open-banking/v2.2
+  tags:
+  - Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/bank-of-ireland-uk-transactions-api-openapi.yml
+  - type: Documentation
+    url: https://developer.bankofireland.com/
+  - type: APIReference
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: License
+    url: https://www.openbanking.org.uk/open-licence
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/account-and-transaction-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/payment-initiation-api-profile.html
+  - type: APIReference
+    url: >-
+      https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
 common:
 - type: AgenticAccess
   url: agentic-access/bank-of-ireland-uk-agentic-access.yml
