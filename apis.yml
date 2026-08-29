@@ -962,6 +962,9 @@ apis:
     url: >-
       https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
 common:
+- type: CapabilityMap
+  url: capabilities/bank-of-ireland-uk-capability-edges.yml
+  name: Bank of Ireland (UK) Business Capability Map
 - type: AgenticAccess
   url: agentic-access/bank-of-ireland-uk-agentic-access.yml
 - type: DomainSecurity

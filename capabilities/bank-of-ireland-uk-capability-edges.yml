@@ -1,0 +1,201 @@
+slug: bank-of-ireland-uk
+provider: Bank of Ireland (UK)
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Banking & Capital Markets
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 20
+edges:
+- tag: Domestic Payments
+  spec_file: bank-of-ireland-uk-domestic-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.92
+  evidence: POST /domestic-payments 'Initiate a Domestic Payment'; schema OBWriteDomestic2
+  reason: Explicit initiation and status retrieval of domestic payment instructions — payment initiation
+    management.
+- tag: Domestic Standing Orders
+  spec_file: bank-of-ireland-uk-domestic-standing-orders-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.92
+  evidence: POST /domestic-standing-orders "Submit a Domestic Standing Order"; openapi title "Payment
+    Initiation Domestic Standing Orders API"
+  reason: 'UK Open Banking payment initiation surface: capture and submission of domestic standing order
+    payment instructions, with payment details retrieval. Squarely payment initiation within Payments
+    & Card Management.'
+- tag: International Payments
+  spec_file: bank-of-ireland-uk-international-payments-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.92
+  evidence: POST /international-payments "Initiate an International Payment"
+  reason: Initiation and tracking of cross-border payments, matching Cross-Border Payment Management (international
+    payments, FX).
+- tag: Domestic Payment Consents
+  spec_file: bank-of-ireland-uk-domestic-payment-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.9
+  evidence: POST /domestic-payment-consents 'Create a Domestic Payment Consent'; 'Confirm availability
+    of funds for a Domestic Payment'
+  reason: Payment instruction consent capture, authorisation and funds confirmation under the Open Banking
+    Payment Initiation spec — squarely payment initiation management.
+- tag: Domestic Scheduled Payments
+  spec_file: bank-of-ireland-uk-domestic-scheduled-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.9
+  evidence: POST /domestic-scheduled-payments 'Initiate a Domestic Scheduled Payment'; schema OBWriteDomesticScheduled2
+  reason: Initiation and retrieval of future-dated domestic payment instructions — payment initiation
+    management.
+- tag: File Payments
+  spec_file: bank-of-ireland-uk-file-payments-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.9
+  evidence: POST /file-payments "Submit a File Payment"; GET "Get payment details for a File Payment"
+  reason: Bulk file payment submission and status/details retrieval under Payment Initiation — payment
+    instruction capture and execution tracking.
+- tag: International Scheduled Payments
+  spec_file: bank-of-ireland-uk-international-scheduled-payments-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.9
+  evidence: POST /international-scheduled-payments "Initiate an International Scheduled Payment"
+  reason: Future-dated cross-border payment initiation and status retrieval — international payment management.
+- tag: Domestic Scheduled Payment Consents
+  spec_file: bank-of-ireland-uk-domestic-scheduled-payment-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.88
+  evidence: POST /domestic-scheduled-payment-consents 'Create a Domestic Scheduled Payment Consent'
+  reason: Capture and authorisation of consent for scheduled domestic payment instructions — payment initiation
+    management.
+- tag: Domestic Standing Order Consents
+  spec_file: bank-of-ireland-uk-domestic-standing-order-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.88
+  evidence: POST /domestic-standing-order-consents 'Create a Domestic Standing Order Consent'; schema
+    OBFrequency6
+  reason: Consent capture for recurring standing order payment instructions under Payment Initiation —
+    payment initiation management.
+- tag: International Standing Orders
+  spec_file: bank-of-ireland-uk-international-standing-orders-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.88
+  evidence: POST /international-standing-orders "Submit an International Standing Order"; schema OBWriteInternationalStandingOrder4
+  reason: Recurring cross-border payment instruction submission and details retrieval — international
+    payment management.
+- tag: File Payment Consents
+  spec_file: bank-of-ireland-uk-file-payment-consents-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.85
+  evidence: POST /file-payment-consents "Create a File Payment Consent"; "Upload a File for a ConsentId"
+  reason: Consent creation and file upload for bulk/file payment initiation under the Payment Initiation
+    spec — i.e. capture, validation and authorisation of payment instructions.
+- tag: International Payment Consents
+  spec_file: bank-of-ireland-uk-international-payment-consents-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.85
+  evidence: POST /international-payment-consents "Create an International Payment Consent"; "Confirm Funds
+    Availability for an International Payment"
+  reason: Consent/authorisation stage for cross-border payment instructions under the Payment Initiation
+    spec, including OBRegulatoryReporting1 for international transfers.
+- tag: International Scheduled Payments Consents
+  spec_file: bank-of-ireland-uk-international-scheduled-payments-consents-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.85
+  evidence: POST /international-scheduled-payment-consents "Create an International Scheduled Payment
+    Consent"
+  reason: Authorisation/consent capture for cross-border scheduled payment instructions under Payment
+    Initiation.
+- tag: International Standing Orders Consents
+  spec_file: bank-of-ireland-uk-international-standing-orders-consents-api-openapi.yml
+  capability_id: BC-1340.40
+  capability_id_l1: BC-1340
+  capability_name: Cross-Border Payment Management
+  confidence: 0.83
+  evidence: POST /international-standing-order-consents "Create an International Standing Order Consent"
+  reason: Consent/authorisation for recurring cross-border payment instructions under the Payment Initiation
+    spec.
+- tag: Parties
+  spec_file: bank-of-ireland-uk-parties-api-openapi.yml
+  capability_id: BC-1300.40
+  capability_id_l1: BC-1300
+  capability_name: Customer Information Management
+  confidence: 0.8
+  evidence: GET /party  GetParty  Get Party; schemas FullLegalName, OBPartyRelationships1, OBReadParty3
+  reason: Exposes the customer/party record (legal name, address, party type, relationships) attached
+    to accounts — banking customer information management.
+- tag: Products
+  spec_file: bank-of-ireland-uk-products-api-openapi.yml
+  capability_id: BC-1310.10
+  capability_id_l1: BC-1310
+  capability_name: Product Catalogue Management
+  confidence: 0.8
+  evidence: GET /products  GetProducts  Get Products; schemas OBPCAData1, OBBCAData1, OB_FeeFrequency1Code_3,
+    OB_InterestRateType1Code_1
+  reason: Returns banking product definitions with fees and interest rate structures for accounts — product
+    catalogue / product master data.
+- tag: Branch
+  spec_file: bank-of-ireland-uk-branch-api-openapi.yml
+  capability_id: BC-1300.50
+  capability_id_l1: BC-1300
+  capability_name: Banking Channels Management
+  confidence: 0.75
+  evidence: openapi title 'Open Data Branch API' with GET /branches
+  reason: Open Data publication of branch locations/details, which is branch channel information — banking
+    channels management. Minimal schema detail so not fully certain.
+- tag: ATM
+  spec_file: bank-of-ireland-uk-atm-api-openapi.yml
+  capability_id: BC-1300.50
+  capability_id_l1: BC-1300
+  capability_name: Banking Channels Management
+  confidence: 0.7
+  evidence: GET /atms — "Latest Swagger specification for OpenData"
+  reason: Open Data ATM locator endpoint publishes the bank's ATM network, which is physical channel/estate
+    information — banking channels management. No other capability fits.
+- tag: PCA
+  spec_file: bank-of-ireland-uk-pca-api-openapi.yml
+  capability_id: BC-1310.10
+  capability_id_l1: BC-1310
+  capability_name: Product Catalogue Management
+  confidence: 0.7
+  evidence: Open Data PCA API — GET /personal-current-accounts
+  reason: CMA Open Data endpoint publishing the bank's personal current account product information (terms,
+    rates, fees) — a published banking product catalogue rather than account servicing.
+- tag: Standing Orders
+  spec_file: bank-of-ireland-uk-standing-orders-api-openapi.yml
+  capability_id: BC-1340.10
+  capability_id_l1: BC-1340
+  capability_name: Payment Initiation Management
+  confidence: 0.7
+  evidence: GET /standing-orders  GetStandingOrders  Get Standing Orders; schemas OBFrequency6, NumberOfPayments
+  reason: Recurring payment instructions (standing orders) with frequency and amount details — payment
+    instruction capture/management.
