@@ -73,7 +73,7 @@ tags_raw:
 - Fintech
 - Financial-Services
 created: '2026-07-23'
-modified: '2026-07-23'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: bank-of-ireland-uk:bank-of-ireland-uk-dynamic-client-registration-api
@@ -985,6 +985,8 @@ apis:
     url: >-
       https://openbankinguk.github.io/read-write-api-docs-pub/v3.1.11/profiles/confirmation-of-funds-api-profile.html
 common:
+- url: https://www.bankofirelanduk.com/about/media-centre/blog/
+  type: Blog
 - type: CapabilityMap
   url: capabilities/bank-of-ireland-uk-capability-edges.yml
   name: Bank of Ireland (UK) Business Capability Map
