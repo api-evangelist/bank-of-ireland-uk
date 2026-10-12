@@ -1,5 +1,5 @@
 generated: '2026-10-12'
-method: none
+method: searched
 source:
 - https://zapier.com/apps/bank-of-ireland-uk/integrations
 - https://n8n.io/integrations/bank-of-ireland-uk/
@@ -9,8 +9,26 @@ checked:
 - https://composio.dev/toolkits/bank-of-ireland-uk
 - https://monid.ai/tools/bank-of-ireland-uk
 - https://n8n.io/integrations/bank-of-ireland-uk/
+- https://www.openbanking.org.uk/regulated-providers/bank-of-ireland-uk/
 - https://zapier.com/apps/bank-of-ireland-uk/integrations
 summary: null
 marketplace_apps: []
-edges: []
+edges:
+- partner_name: UK Open Banking
+  partner: null
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://www.openbanking.org.uk/regulated-providers/bank-of-ireland-uk/
+  contract_reference:
+    register: UK Open Banking regulated providers (OBL directory)
+    spec_file: null
+    role: Account Providers
+    registered_name: Bank of Ireland (UK) Plc
+    register_id: https://register.fca.org.uk/s/firm?id=001b000000NMNtpAAH
+    matched_domain: bankofirelanduk.com
+    api_families: null
+    detected_by: sweep-standard-registers.py
+    detected: '2026-10-12'
 templates: []
