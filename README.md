@@ -1,4 +1,4 @@
-# Bank of Ireland (UK) (bank-of-ireland-uk)
+# Bank of Ireland (UK)
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,135 +64,158 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Bank of Ireland (UK) plc is the UK banking arm of Bank of Ireland Group plc, Ireland's oldest bank (founded 1783), headquartered in Dublin. In the United Kingdom it is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the PRA. As one of the nine CMA-mandated banks (the CMA9) it participates fully in the UK Open Banking programme under PSD2, publishing a public Open Data API and the OBIE Read/Write API family through its Developer Hub.
+Bank of Ireland (UK) plc is the UK banking arm of Bank of Ireland Group plc, Ireland's oldest bank, founded in 1783 and headquartered in Dublin with a listing on Euronext Dublin and the London Stock Exchange. In the United Kingdom it is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the PRA, and as one of the nine CMA-mandated banks (the CMA9) it participates fully in the UK Open Banking programme under PSD2. Bank of Ireland (UK) and Bank of Ireland (ROI) are separate legal entities on the Open Banking Directory and TPPs must onboard to each separately. The bank publishes a public, unauthenticated Open Data API (ATMs, branches, personal and business current accounts, unsecured SME loans and commercial credit cards) conformant to the OBIE Open Data Standard, alongside the OBIE Read/Write API family - Account & Transaction Information (AIS), Payment Initiation (PIS) and Confirmation of Funds (CBPII) - secured with FAPI-grade OAuth2/OIDC, PSD2 strong customer authentication and mutual-TLS client authentication using OBIE/eIDAS certificates, onboarded through the Bank of Ireland Developer Hub with a sandbox for testing.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/bank-of-ireland-uk/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/bank-of-ireland-uk/refs/heads/main/apis.yml)
+**Areas:** Financial Services · Banking · Open Banking · PSD2 · OBIE · CMA9 · United Kingdom · Payments · Account Information · Open Data · FAPI · Fintech
 
-## Tags
+## Bank of Ireland (UK) on APIs.io
 
-- Financial Services
-- Banking
-- Open Banking
-- PSD2
-- OBIE
-- CMA9
-- United Kingdom
-- Payments
-- Account Information
-- Open Data
-- FAPI
-- Fintech
+Everything profiled for Bank of Ireland (UK) is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bank-of-ireland-uk/](https://apis.io/providers/bank-of-ireland-uk/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (35)
 
-- **Created:** 2026-07-23
-- **Modified:** 2026-07-23
+- [Bank of Ireland (UK) Dynamic Client Registration API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-dynamic-client-registration-api/) — OBIE Dynamic Client Registration (DCR) API documented on the Bank of Ireland Developer Hub for onboarding third-party provider applications using OBIE/eIDAS…
+- [Bank of Ireland (UK) Account Access Consents API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-account-access-consents-api/) — The Account Access Consents API from Bank of Ireland (UK) — 2 operation(s) for account access consents.
+- [Bank of Ireland (UK) Accounts API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-accounts-api/) — The Accounts API from Bank of Ireland (UK) — 2 operation(s) for accounts.
+- [Bank of Ireland (UK) ATM API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-atm-api/) — Endpoint for getting ATM data
+- [Bank of Ireland (UK) Balances API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-balances-api/) — The Balances API from Bank of Ireland (UK) — 2 operation(s) for balances.
+- [Bank of Ireland (UK) BCA API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-bca-api/) — Endpoint for getting Business Current Account data
+- [Bank of Ireland (UK) Beneficiaries API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-beneficiaries-api/) — The Beneficiaries API from Bank of Ireland (UK) — 2 operation(s) for beneficiaries.
+- [Bank of Ireland (UK) Branch API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-branch-api/) — Endpoint for getting Branch data
+- [Bank of Ireland (UK) CCC API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-ccc-api/) — Endpoint for getting Commercial Credit Card data
+- [Bank of Ireland (UK) Direct Debits API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-direct-debits-api/) — The Direct Debits API from Bank of Ireland (UK) — 2 operation(s) for direct debits.
+- [Bank of Ireland (UK) Domestic Payment Consents API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-domestic-payment-consents-api/) — The Domestic Payment Consents API from Bank of Ireland (UK) — 3 operation(s) for domestic payment consents.
+- [Bank of Ireland (UK) Domestic Payments API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-domestic-payments-api/) — The Domestic Payments API from Bank of Ireland (UK) — 3 operation(s) for domestic payments.
+- [Bank of Ireland (UK) Domestic Scheduled Payment Consents API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-domestic-scheduled-payment-consents-api/) — The Domestic Scheduled Payment Consents API from Bank of Ireland (UK) — 2 operation(s) for domestic scheduled payment consents.
+- [Bank of Ireland (UK) Domestic Scheduled Payments API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-domestic-scheduled-payments-api/) — The Domestic Scheduled Payments API from Bank of Ireland (UK) — 3 operation(s) for domestic scheduled payments.
+- [Bank of Ireland (UK) Domestic Standing Order Consents API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-domestic-standing-order-consents-api/) — The Domestic Standing Order Consents API from Bank of Ireland (UK) — 2 operation(s) for domestic standing order consents.
+- [Bank of Ireland (UK) Domestic Standing Orders API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-domestic-standing-orders-api/) — The Domestic Standing Orders API from Bank of Ireland (UK) — 3 operation(s) for domestic standing orders.
+- [Bank of Ireland (UK) File Payment Consents API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-file-payment-consents-api/) — The File Payment Consents API from Bank of Ireland (UK) — 3 operation(s) for file payment consents.
+- [Bank of Ireland (UK) File Payments API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-file-payments-api/) — The File Payments API from Bank of Ireland (UK) — 4 operation(s) for file payments.
+- [Bank of Ireland (UK) Funds Confirmation Consents API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-funds-confirmation-consents-api/) — The Funds Confirmation Consents API from Bank of Ireland (UK) — 2 operation(s) for funds confirmation consents.
+- [Bank of Ireland (UK) Funds Confirmations API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-funds-confirmations-api/) — The Funds Confirmations API from Bank of Ireland (UK) — 1 operation(s) for funds confirmations.
+- [Bank of Ireland (UK) International Payment Consents API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-international-payment-consents-api/) — The International Payment Consents API from Bank of Ireland (UK) — 3 operation(s) for international payment consents.
+- [Bank of Ireland (UK) International Payments API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-international-payments-api/) — The International Payments API from Bank of Ireland (UK) — 3 operation(s) for international payments.
+- [Bank of Ireland (UK) International Scheduled Payments API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-international-scheduled-payments-api/) — The International Scheduled Payments API from Bank of Ireland (UK) — 3 operation(s) for international scheduled payments.
+- [Bank of Ireland (UK) International Scheduled Payments Consents API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-international-scheduled-payments-consents-api/) — The International Scheduled Payments Consents API from Bank of Ireland (UK) — 3 operation(s) for international scheduled payments consents.
+- [Bank of Ireland (UK) International Standing Orders API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-international-standing-orders-api/) — The International Standing Orders API from Bank of Ireland (UK) — 3 operation(s) for international standing orders.
+- [Bank of Ireland (UK) International Standing Orders Consents API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-international-standing-orders-consents-api/) — The International Standing Orders Consents API from Bank of Ireland (UK) — 2 operation(s) for international standing orders consents.
+- [Bank of Ireland (UK) Offers API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-offers-api/) — The Offers API from Bank of Ireland (UK) — 2 operation(s) for offers.
+- [Bank of Ireland (UK) Parties API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-parties-api/) — The Parties API from Bank of Ireland (UK) — 3 operation(s) for parties.
+- [Bank of Ireland (UK) PCA API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-pca-api/) — Endpoint for getting Personal Current Account data
+- [Bank of Ireland (UK) Products API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-products-api/) — The Products API from Bank of Ireland (UK) — 2 operation(s) for products.
+- [Bank of Ireland (UK) Scheduled Payments API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-scheduled-payments-api/) — The Scheduled Payments API from Bank of Ireland (UK) — 2 operation(s) for scheduled payments.
+- [Bank of Ireland (UK) SME API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-sme-api/) — Endpoint for getting Unsecured SME Loan data
+- [Bank of Ireland (UK) Standing Orders API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-standing-orders-api/) — The Standing Orders API from Bank of Ireland (UK) — 2 operation(s) for standing orders.
+- [Bank of Ireland (UK) Statements API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-statements-api/) — The Statements API from Bank of Ireland (UK) — 5 operation(s) for statements.
+- [Bank of Ireland (UK) Transactions API](https://apis.io/apis/bank-of-ireland-uk/bank-of-ireland-uk-transactions-api/) — The Transactions API from Bank of Ireland (UK) — 2 operation(s) for transactions.
 
-## APIs
+### Published properties
 
-### Bank of Ireland (UK) Open Data API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Public, unauthenticated OBIE Open Data API serving reference data for ATMs, branches, personal current accounts, business current accounts, unsecured SME loans and commercial credit cards. Confirmed live (HTTP 200) at the v2.2 base on 2026-07-23.
+#### MCP servers (1)
 
-- **Human URL:** [https://developer.bankofireland.com/](https://developer.bankofireland.com/)
-- **Base URL:** `https://openapi.bankofireland.com/open-banking/v2.2`
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags
+- [bank-of-ireland-uk](https://apis.io/servers/bank-of-ireland-uk/bank-of-ireland-uk/)
 
-- Open Data
-- ATMs
-- Branches
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [OpenAPI](openapi/bank-of-ireland-uk-open-data-openapi.json) — OBIE Open Data Standard (shared specification)
-- [Documentation](https://developer.bankofireland.com/)
-- [API Reference](https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/)
-- [Open Licence](https://www.openbanking.org.uk/open-licence)
+- [Bank Of Ireland Uk Agentic Access](https://apis.io/agentic-access/bank-of-ireland-uk/bank-of-ireland-uk-agentic-access/)
 
-### Bank of Ireland (UK) Account & Transaction Information API
+#### Collections (1)
 
-OBIE Read/Write Account & Transaction Information (AIS) API allowing authorised AISPs to access account, balance, transaction, standing order, direct debit and product data with customer consent. FAPI-secured (OAuth2/OIDC, PSD2 SCA, mTLS).
+Postman and Open Collection request collections.
 
-- **Human URL:** [https://developer.bankofireland.com/](https://developer.bankofireland.com/)
-- **Base URL:** `https://api.obapi.bankofireland.com/open-banking/v3.1/aisp`
+- [Open Data API](https://apis.io/collections/bank-of-ireland-uk/open-bank-of-ireland-uk-open-data/)
 
-#### Tags
+#### Overlays (4)
 
-- Account Information
-- AISP
-- Read/Write
+OpenAPI overlays, including conversational phrasing for each operation.
 
-#### Properties
+- [Bank Of Ireland Uk Account Info Overlay](https://apis.io/overlays/bank-of-ireland-uk/bank-of-ireland-uk-account-info-overlay/)
+- [Bank Of Ireland Uk Confirmation Funds Overlay](https://apis.io/overlays/bank-of-ireland-uk/bank-of-ireland-uk-confirmation-funds-overlay/)
+- [Bank Of Ireland Uk Open Data Overlay](https://apis.io/overlays/bank-of-ireland-uk/bank-of-ireland-uk-open-data-overlay/)
+- [Bank Of Ireland Uk Payment Initiation Overlay](https://apis.io/overlays/bank-of-ireland-uk/bank-of-ireland-uk-payment-initiation-overlay/)
 
-- [OpenAPI](openapi/bank-of-ireland-uk-account-info-openapi.yaml) — OBIE Read/Write Standard (shared specification)
-- [Documentation](https://developer.bankofireland.com/)
+#### Security (2)
 
-### Bank of Ireland (UK) Payment Initiation API
+Authentication, trust centre, and vulnerability disclosure.
 
-OBIE Read/Write Payment Initiation (PIS) API enabling authorised PISPs to initiate domestic and international single, scheduled, standing-order and file payments with customer consent. FAPI-secured.
+- [Bank Of Ireland Uk Authentication](https://apis.io/security/bank-of-ireland-uk/bank-of-ireland-uk-authentication/)
+- [Bank Of Ireland Uk Domain Security](https://apis.io/security/bank-of-ireland-uk/bank-of-ireland-uk-domain-security/)
 
-- **Human URL:** [https://developer.bankofireland.com/](https://developer.bankofireland.com/)
-- **Base URL:** `https://api.obapi.bankofireland.com/open-banking/v3.1/pisp`
+#### OAuth scopes (1)
 
-#### Tags
+The permissions the API asks for.
 
-- Payments
-- Payment Initiation
-- PISP
+- [Bank Of Ireland Uk Scopes](https://apis.io/scopes/bank-of-ireland-uk/bank-of-ireland-uk-scopes/)
 
-#### Properties
+## Where to find this API
 
-- [OpenAPI](openapi/bank-of-ireland-uk-payment-initiation-openapi.yaml) — OBIE Read/Write Standard (shared specification)
-- [Documentation](https://developer.bankofireland.com/)
-
-### Bank of Ireland (UK) Confirmation of Funds API
-
-OBIE Read/Write Confirmation of Funds (CBPII) API allowing authorised card-based payment instrument issuers to confirm the availability of funds with customer consent. FAPI-secured.
-
-- **Human URL:** [https://developer.bankofireland.com/](https://developer.bankofireland.com/)
-- **Base URL:** `https://api.obapi.bankofireland.com/open-banking/v3.1/cbpii`
-
-#### Tags
-
-- Confirmation of Funds
-- CBPII
-- Read/Write
-
-#### Properties
-
-- [OpenAPI](openapi/bank-of-ireland-uk-confirmation-funds-openapi.yaml) — OBIE Read/Write Standard (shared specification)
-- [Documentation](https://developer.bankofireland.com/)
-
-### Bank of Ireland (UK) Dynamic Client Registration API
-
-OBIE Dynamic Client Registration (DCR) API documented on the Developer Hub for onboarding TPP applications using OBIE/eIDAS certificates.
-
-- **Human URL:** [https://developer.bankofireland.com/](https://developer.bankofireland.com/)
-- **Base URL:** `https://auth.obapi.bankofireland.com/oauth/as/b365/`
-
-#### Tags
-
-- Dynamic Client Registration
-- Onboarding
-- OAuth2
-
-#### Properties
-
-- [Documentation](https://eu1.anypoint.mulesoft.com/exchange/portals/bankofireland/pages/Getting%20Started/)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.bankofirelanduk.com/)
-- [Developer Portal](https://developer.bankofireland.com/)
-- [Portal (MuleSoft Anypoint)](https://eu1.anypoint.mulesoft.com/exchange/portals/bankofireland/)
-- [Status Page / FCA API Statistics](https://www.bankofirelanduk.com/personal/api-statistics/)
-- [LinkedIn](https://www.linkedin.com/company/bank-of-ireland/)
-- [Privacy Policy](https://www.bankofirelanduk.com/site-links/privacy/)
+- [Documentation](https://developer.bankofireland.com/)
+- [Getting started](https://eu1.anypoint.mulesoft.com/exchange/portals/bankofireland/pages/Getting%20Started/)
 - [Support](https://www.bankofirelanduk.com/help-and-support/)
-- [Open Licence](https://www.openbanking.org.uk/open-licence)
+- [Blog](https://www.bankofirelanduk.com/about/media-centre/blog/)
+- [Compliance](https://www.bankofirelanduk.com/personal/api-statistics/)
+- [Privacy policy](https://www.bankofirelanduk.com/site-links/privacy/)
+- [Status](https://www.bankofirelanduk.com/personal/api-statistics/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 37.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 46.9 |
+| Contract governance | 18.2 |
+| Operational transparency | 23.7 |
+| Developer ergonomics | 28.0 |
+| Access clarity | 18.4 |
+
+**Agent readiness 43.0** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | verified |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | verified |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+
+**Regulatory alignment 44.9** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bank-of-ireland-uk/](https://apis.io/providers/bank-of-ireland-uk/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Bank of Ireland (UK): the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bank-of-ireland-uk/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
